@@ -17,7 +17,6 @@ public class names {
             if (list.size() == 0) list.add(str);
             else {
                 for (int j = 0; j < list.get(i).length; j++) {
-//                    for (String [] s : list){
                     if (Arrays.asList(list.get(j)).contains(str[j])) count++;
                 }
                 if (count == 3) {

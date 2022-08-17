@@ -24,5 +24,6 @@ public class Binary {
                 else start = middle+1;
             }
             return -1;
+        // бинарный поиск индекса в массиве
     }
 }
