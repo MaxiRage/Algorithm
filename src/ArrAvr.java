@@ -9,7 +9,7 @@ public class ArrAvr {
     }
 
     public static double avrArr(int[] array) {
-        double sum = 0;Ё
+        double sum = 0;
         for (int i = 0; i < array.length; i++) {
             sum += array[i];
         }
