@@ -1,4 +1,8 @@
-public class Dz {
+/**
+ДЗ
+ Поиск количества максимальных значений
+ **/
+public class CountMaxValue {
     public static void main(String[] args) {
 
     int [] arr = {1, 8, 3, 8, 2, 6, 8, 8};

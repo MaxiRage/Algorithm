@@ -1,3 +1,7 @@
+/**
+ * ДЗ
+ * Поиск суммы между мин и макс значениями
+ */
 public class SumArr {
     public static void main(String[] args) {
         System.out.println(sumMinMax(new int[]{-10022, 1, 5, 1, 17, -100, 2, 100, 200, 10, -1000})); //

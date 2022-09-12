@@ -1,6 +1,9 @@
 import java.util.Arrays;
 
-public class Revers {
+/**
+ * Разворачиваем массив
+ */
+public class ReversArr {
     public static void main(String[] args) {
         Revers(new int[]{-100, 1, 5, 1, 17, -1000, 2, 100, 200, 0, -1}); // 8 эл.
 
