@@ -1,4 +1,4 @@
-public class FuzzySearch {
+public class YLab_FuzzySearch {
     public static void main(String[] args) {
         /*
         Task3

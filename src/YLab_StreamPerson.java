@@ -1,8 +1,7 @@
-import java.util.Arrays;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
-public class StreamPerson {
+public class YLab_StreamPerson {
     static class Person {
         final int id;
 
@@ -34,18 +33,22 @@ public class StreamPerson {
         }
     }
 
-    private static Person[] RAW_DATA = new Person[]{
+    private static Person[] RAW_DATA =
+//            null;     // провер€ем, что Optional на null работает
+            new Person[]{
+//                    null}; // провер€ем, что филтр на null работает
+
             new Person(0, "Harry"),
+            new Person(2, "Harry"),
             new Person(0, "Harry"), // дубликат
             new Person(1, "Harry"), // тЄзка
-            new Person(2, "Harry"),
-            new Person(3, "Emily"),
+            new Person(5, "Amelia"),
             new Person(4, "Jack"),
             new Person(4, "Jack"),
-            new Person(5, "Amelia"),
-            new Person(5, "Amelia"),
-            new Person(6, "Amelia"),
             new Person(7, "Amelia"),
+            new Person(6, "Amelia"),
+            new Person(3, "Emily"),
+            new Person(5, "Amelia"),
             new Person(8, "Amelia"),};
         /*  Raw data:
 
@@ -82,18 +85,18 @@ public class StreamPerson {
      */
 
     public static void main(String[] args) {
-        System.out.println("Raw data:");
-        System.out.println();
-
-        for (Person person : RAW_DATA) {
-            System.out.println(person.id + " - " + person.name);
-        }
-
-        System.out.println();
-        System.out.println("**************************************************");
-        System.out.println();
-        System.out.println("Duplicate filtered, grouped by name, sorted by name and id:");
-        System.out.println();
+//        System.out.println("Raw data:");
+//        System.out.println();
+//
+//        for (Person person : RAW_DATA) {
+//            System.out.println(person.id + " - " + person.name);
+//        }
+//
+//        System.out.println();
+//        System.out.println("**************************************************");
+//        System.out.println();
+//        System.out.println("Duplicate filtered, grouped by name, sorted by name and id:");
+//        System.out.println();
 
         /*
         Task1
@@ -109,14 +112,19 @@ public class StreamPerson {
                 Key: Jack
                 Value:1
          */
-        Arrays.stream(RAW_DATA)
+        Optional.ofNullable(RAW_DATA)
+                .stream()
+                .flatMap(Arrays::stream)
+                .filter(Objects::nonNull)
                 .distinct()
+                .sorted(Comparator.comparingInt(Person::getId))
+//                .forEach(person-> System.out.println(person.id + " - " + person.name)); // проверка отсортировки по id
                 .collect(Collectors.toMap(key -> key.name, value -> 1, Integer::sum))
                 .forEach((key, value) -> System.out.println("Key: " + key + "\n" + "Value: " + value));
 
-        System.out.println();
-        System.out.println("**************************************************");
-        System.out.println();
+//        System.out.println();
+//        System.out.println("**************************************************");
+//        System.out.println();
 
 
     }
