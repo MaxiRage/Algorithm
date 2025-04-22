@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Задачка на добавление элемента в List в цикле
+ * пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ List пїЅ пїЅпїЅпїЅпїЅпїЅ
  * ConcurrentModificationException
  */
 public class AddElementInLoop {
@@ -17,3 +17,4 @@ public class AddElementInLoop {
         System.out.println(numbers.size());
     }
 }
+
